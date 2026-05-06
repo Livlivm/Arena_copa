@@ -99,7 +99,7 @@ node src/server.js
 - Experiência voltada ao fã de futebol  
 
 ---
-## Link frount inicial
+## Link Front Inicial
 https://livlivm.github.io/Arenasite/
 ---
 ## Autoria
