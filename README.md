@@ -24,10 +24,10 @@ Oferecer uma aplicação completa para fãs de futebol, reunindo:
 
 - Node.js  
 - Express  
-- Prisma ORM  
+- Prisma
 - MySQL  
 - JWT  
-- Flutter ou React  
+- Flutter 
 
 ---
 
@@ -47,7 +47,7 @@ Oferecer uma aplicação completa para fãs de futebol, reunindo:
 
 1. Clone o repositório:
 ```bash
-git clone 
+git clone https://github.com/Livlivm/Arena_copa.git
 ```
 
 2. Acesse a pasta:
