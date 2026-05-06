@@ -1,0 +1,59 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model figurinha {
+  id   Int    @id @default(autoincrement())
+  nome String
+}
+
+model jogador {
+  id     Int    @id @default(autoincrement())
+  nome   String
+  jogoId Int
+}
+
+model jogo {
+  id      Int      @id @default(autoincrement())
+  timeA   String
+  timeB   String
+  data    DateTime
+  placarA Int      @default(0)
+  placarB Int      @default(0)
+}
+
+model pedido {
+  id        Int   @id @default(autoincrement())
+  usuarioId Int
+  total     Float
+}
+
+model produto {
+  id    Int    @id @default(autoincrement())
+  nome  String
+  preco Float
+}
+
+model usuario {
+  id     Int    @id @default(autoincrement())
+  nome   String
+  email  String @unique(map: "Usuario_email_key")
+  senha  String
+  pontos Int    @default(0)
+}
+
+model usuariofigurinha {
+  id          Int @id @default(autoincrement())
+  usuarioId   Int
+  figurinhaId Int
+}

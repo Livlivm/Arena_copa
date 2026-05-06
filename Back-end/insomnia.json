@@ -1,0 +1,607 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-04-24T16:17:54.860Z",
+  "__export_source": "backend-aula",
+  "resources": [
+    {
+      "_id": "wrk_backend",
+      "_type": "workspace",
+      "name": "Backend Aula"
+    },
+    {
+      "_id": "fld_CopadoMundo",
+      "_type": "request_group",
+      "parentId": "wrk_backend",
+      "name": "CopadoMundo"
+    },
+    {
+      "_id": "fld_figurinha",
+      "_type": "request_group",
+      "parentId": "fld_CopadoMundo",
+      "name": "figurinha"
+    },
+    {
+      "_id": "req_figurinha_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_figurinha",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/figurinha/listar"
+    },
+    {
+      "_id": "req_figurinha_GET_ID",
+      "_type": "request",
+      "parentId": "fld_figurinha",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/figurinha/buscar/:id"
+    },
+    {
+      "_id": "req_figurinha_POST",
+      "_type": "request",
+      "parentId": "fld_figurinha",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/figurinha/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"string\"\n}"
+      }
+    },
+    {
+      "_id": "req_figurinha_PUT",
+      "_type": "request",
+      "parentId": "fld_figurinha",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/figurinha/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"string\"\n}"
+      }
+    },
+    {
+      "_id": "req_figurinha_DELETE",
+      "_type": "request",
+      "parentId": "fld_figurinha",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/figurinha/excluir/:id"
+    },
+    {
+      "_id": "fld_jogador",
+      "_type": "request_group",
+      "parentId": "fld_CopadoMundo",
+      "name": "jogador"
+    },
+    {
+      "_id": "req_jogador_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_jogador",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/jogador/listar"
+    },
+    {
+      "_id": "req_jogador_GET_ID",
+      "_type": "request",
+      "parentId": "fld_jogador",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/jogador/buscar/:id"
+    },
+    {
+      "_id": "req_jogador_POST",
+      "_type": "request",
+      "parentId": "fld_jogador",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/jogador/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"string\",\n  \"jogoId\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_jogador_PUT",
+      "_type": "request",
+      "parentId": "fld_jogador",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/jogador/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"string\",\n  \"jogoId\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_jogador_DELETE",
+      "_type": "request",
+      "parentId": "fld_jogador",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/jogador/excluir/:id"
+    },
+    {
+      "_id": "fld_jogo",
+      "_type": "request_group",
+      "parentId": "fld_CopadoMundo",
+      "name": "jogo"
+    },
+    {
+      "_id": "req_jogo_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_jogo",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/jogo/listar"
+    },
+    {
+      "_id": "req_jogo_GET_ID",
+      "_type": "request",
+      "parentId": "fld_jogo",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/jogo/buscar/:id"
+    },
+    {
+      "_id": "req_jogo_POST",
+      "_type": "request",
+      "parentId": "fld_jogo",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/jogo/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"timeA\": \"string\",\n  \"timeB\": \"string\",\n  \"data\": \"2026-04-24T16:17:54.858Z\",\n  \"placarA\": 0,\n  \"placarB\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_jogo_PUT",
+      "_type": "request",
+      "parentId": "fld_jogo",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/jogo/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"timeA\": \"string\",\n  \"timeB\": \"string\",\n  \"data\": \"2026-04-24T16:17:54.858Z\",\n  \"placarA\": 0,\n  \"placarB\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_jogo_DELETE",
+      "_type": "request",
+      "parentId": "fld_jogo",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/jogo/excluir/:id"
+    },
+    {
+      "_id": "fld_pedido",
+      "_type": "request_group",
+      "parentId": "fld_CopadoMundo",
+      "name": "pedido"
+    },
+    {
+      "_id": "req_pedido_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_pedido",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/pedido/listar"
+    },
+    {
+      "_id": "req_pedido_GET_ID",
+      "_type": "request",
+      "parentId": "fld_pedido",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/pedido/buscar/:id"
+    },
+    {
+      "_id": "req_pedido_POST",
+      "_type": "request",
+      "parentId": "fld_pedido",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/pedido/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"usuarioId\": 0,\n  \"total\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_pedido_PUT",
+      "_type": "request",
+      "parentId": "fld_pedido",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/pedido/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"usuarioId\": 0,\n  \"total\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_pedido_DELETE",
+      "_type": "request",
+      "parentId": "fld_pedido",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/pedido/excluir/:id"
+    },
+    {
+      "_id": "fld_produto",
+      "_type": "request_group",
+      "parentId": "fld_CopadoMundo",
+      "name": "produto"
+    },
+    {
+      "_id": "req_produto_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_produto",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/produto/listar"
+    },
+    {
+      "_id": "req_produto_GET_ID",
+      "_type": "request",
+      "parentId": "fld_produto",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/produto/buscar/:id"
+    },
+    {
+      "_id": "req_produto_POST",
+      "_type": "request",
+      "parentId": "fld_produto",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/produto/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"string\",\n  \"preco\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_produto_PUT",
+      "_type": "request",
+      "parentId": "fld_produto",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/produto/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"string\",\n  \"preco\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_produto_DELETE",
+      "_type": "request",
+      "parentId": "fld_produto",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/produto/excluir/:id"
+    },
+    {
+      "_id": "fld_usuario",
+      "_type": "request_group",
+      "parentId": "fld_CopadoMundo",
+      "name": "usuario"
+    },
+    {
+      "_id": "req_usuario_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_usuario",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/usuario/listar"
+    },
+    {
+      "_id": "req_usuario_GET_ID",
+      "_type": "request",
+      "parentId": "fld_usuario",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/usuario/buscar/:id"
+    },
+    {
+      "_id": "req_usuario_POST",
+      "_type": "request",
+      "parentId": "fld_usuario",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/usuario/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"string\",\n  \"email\": \"string\",\n  \"senha\": \"string\",\n  \"pontos\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_usuario_PUT",
+      "_type": "request",
+      "parentId": "fld_usuario",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/usuario/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"string\",\n  \"email\": \"string\",\n  \"senha\": \"string\",\n  \"pontos\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_usuario_DELETE",
+      "_type": "request",
+      "parentId": "fld_usuario",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/usuario/excluir/:id"
+    },
+    {
+      "_id": "fld_usuariofigurinha",
+      "_type": "request_group",
+      "parentId": "fld_CopadoMundo",
+      "name": "usuariofigurinha"
+    },
+    {
+      "_id": "req_usuariofigurinha_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_usuariofigurinha",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/usuariofigurinha/listar"
+    },
+    {
+      "_id": "req_usuariofigurinha_GET_ID",
+      "_type": "request",
+      "parentId": "fld_usuariofigurinha",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/usuariofigurinha/buscar/:id"
+    },
+    {
+      "_id": "req_usuariofigurinha_POST",
+      "_type": "request",
+      "parentId": "fld_usuariofigurinha",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/usuariofigurinha/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"usuarioId\": 0,\n  \"figurinhaId\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_usuariofigurinha_PUT",
+      "_type": "request",
+      "parentId": "fld_usuariofigurinha",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/usuariofigurinha/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"usuarioId\": 0,\n  \"figurinhaId\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_usuariofigurinha_DELETE",
+      "_type": "request",
+      "parentId": "fld_usuariofigurinha",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/usuariofigurinha/excluir/:id"
+    }
+  ]
+}
