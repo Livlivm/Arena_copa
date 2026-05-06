@@ -106,6 +106,9 @@ node src/server.js
   
 ---
 
-## 📄 Licença
+## Links Figma
 
-Projeto desenvolvido para fins educacionais.
+- Desktop: https://www.figma.com/proto/5mUIzY55xuB2uLAclh1gOb/Copa-desktop?node-id=0-43&t=KEVaoqe8MglnHBiA-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=0%3A58
+- Mobile: https://www.figma.com/proto/kiOxwzTiiTkScW5j75OBXX/Copa?node-id=9-107&p=f&t=JuiqVhRNkJtj8YuY-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=9%3A107
+
+---
