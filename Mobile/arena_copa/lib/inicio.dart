@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login.dart';
+import 'jogos.dart';
 
 class InicioPage extends StatelessWidget {
   const InicioPage({super.key});
@@ -8,6 +9,65 @@ class InicioPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
+
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(color: Colors.black),
+              child: Center(
+                child: Text(
+                  "MENU",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+
+            ListTile(
+              leading: Image.asset(
+                "assets/bandeira_brasil.png",
+                width: 24,
+                height: 24,
+              ),
+              title: const Text("Infos Jogos"),
+              onTap: () {
+                Navigator.pop(context);
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const JogosPage()),
+                );
+              },
+            ),
+
+            ListTile(
+              leading: const Icon(Icons.person),
+              title: const Text("Ver Perfil"),
+              onTap: () {
+                Navigator.pop(context);
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginScreen()),
+                );
+              },
+            ),
+
+            ListTile(
+              leading: const Icon(Icons.settings),
+              title: const Text("Configurações"),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      ),
 
       appBar: AppBar(
         backgroundColor: Colors.black,
@@ -21,7 +81,6 @@ class InicioPage extends StatelessWidget {
             child: InkWell(
               borderRadius: BorderRadius.circular(50),
               onTap: () {
-                // ✅ NAVEGAÇÃO CORRETA
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const LoginScreen()),
@@ -65,9 +124,11 @@ class InicioPage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Row(
                 children: [
-                  Expanded(child: team("assets/brasil.png")),
+                  Expanded(child: team(context, "assets/brasil.png")),
+
                   const SizedBox(width: 10),
-                  Expanded(child: team("assets/franca.png")),
+
+                  Expanded(child: team(context, "assets/franca.png")),
                 ],
               ),
             ),
@@ -147,8 +208,6 @@ class InicioPage extends StatelessWidget {
     );
   }
 
-  // 🔧 COMPONENTES
-
   Widget banner(String img) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 6),
@@ -159,12 +218,23 @@ class InicioPage extends StatelessWidget {
     );
   }
 
-  Widget team(String img) {
-    return Container(
-      height: 75,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        image: DecorationImage(image: AssetImage(img), fit: BoxFit.cover),
+  Widget team(BuildContext context, String img) {
+    return InkWell(
+      borderRadius: BorderRadius.circular(12),
+
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const JogosPage()),
+        );
+      },
+
+      child: Container(
+        height: 75,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          image: DecorationImage(image: AssetImage(img), fit: BoxFit.cover),
+        ),
       ),
     );
   }

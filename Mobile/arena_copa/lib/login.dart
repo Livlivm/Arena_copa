@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'cadastro.dart';
+import 'inicio.dart';
+import 'jogos.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -9,10 +11,83 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
 
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(color: Colors.black),
+              child: Center(
+                child: Text(
+                  "MENU",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+
+            ListTile(
+              leading: const Icon(Icons.home),
+              title: const Text("Início"),
+              onTap: () {
+                Navigator.pop(context);
+
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const InicioPage()),
+                );
+              },
+            ),
+
+            ListTile(
+              leading: const Icon(Icons.flag_rounded),
+              title: const Text("Infos Jogos"),
+              onTap: () {
+                Navigator.pop(context);
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const JogosPage()),
+                );
+              },
+            ),
+
+            ListTile(
+              leading: const Icon(Icons.person),
+              title: const Text("Ver Perfil"),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+
+            ListTile(
+              leading: const Icon(Icons.settings),
+              title: const Text("Configurações"),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      ),
+
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: const Icon(Icons.menu, color: Colors.white),
+
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+              icon: const Icon(Icons.menu, color: Colors.white),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          },
+        ),
       ),
 
       body: Stack(
@@ -104,10 +179,13 @@ class LoginScreen extends StatelessWidget {
                   ),
 
                   _input("E-MAIL"),
+
                   const SizedBox(height: 15),
+
                   _input("SENHA", isPassword: true),
 
                   const SizedBox(height: 10),
+
                   TextButton(
                     onPressed: () {},
                     child: const Text(
@@ -128,7 +206,12 @@ class LoginScreen extends StatelessWidget {
                     height: 48,
                     child: ElevatedButton(
                       onPressed: () {
-                        // aqui depois você pode navegar pra home
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const InicioPage(),
+                          ),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
@@ -165,7 +248,9 @@ class LoginScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       _socialIcon(Icons.facebook, Colors.blueAccent),
+
                       const SizedBox(width: 20),
+
                       _socialIconGoogle(),
                     ],
                   ),
