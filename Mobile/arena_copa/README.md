@@ -32,12 +32,20 @@ lib/
 └── ...
 ```
 
+## Imagens
+
+As imagens utilizadas no projeto estão armazenadas na pasta:
+
+```text
+assets/
+```
+
 ##  Como Executar
 
 1. Clone o repositório:
 
 ```bash
-git clone (https://github.com/Livlivm/Arena_copa.git)
+git clone https://github.com/Livlivm/Arena_copa.git
 ```
 
 2. Entre na pasta do projeto:
@@ -62,20 +70,13 @@ flutter run
 
 Link do protótipo:
 
-(https://www.figma.com/proto/kiOxwzTiiTkScW5j75OBXX/Copa?node-id=9-107&p=f&t=yqFDKmXNK9fipjbN-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=9%3A107)
+https://www.figma.com/proto/kiOxwzTiiTkScW5j75OBXX/Copa?node-id=9-107&p=f&t=yqFDKmXNK9fipjbN-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=9%3A107
 
 ## Colaboradores
 
 - Gabrielly Piffer
 - Thomas Fantini
 
-## Imagens
-
-As imagens utilizadas no projeto estão armazenadas na pasta:
-
-```text
-assets/
-```
 
 ## Licença
 
