@@ -1,4 +1,4 @@
-#  Arena Copa-Flutter
+#  Arena Copa-Mobile
 
 Aplicativo desenvolvido em Flutter para acompanhar informações relacionadas à Copa do Mundo.
 
