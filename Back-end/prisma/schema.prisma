@@ -1,0 +1,107 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model figurinha {
+  id   Int    @id @default(autoincrement())
+  nome String
+
+  usuarios usuariofigurinha[]
+  trocas   trocaFigurinha[]
+}
+
+model jogador {
+  id     Int    @id @default(autoincrement())
+  nome   String
+  jogoId Int
+}
+
+model jogo {
+  id      Int      @id @default(autoincrement())
+  timeA   String
+  timeB   String
+  data    DateTime
+  placarA Int      @default(0)
+  placarB Int      @default(0)
+}
+
+model pedido {
+  id        Int   @id @default(autoincrement())
+  usuarioId Int
+  total     Float
+}
+
+model produto {
+  id    Int    @id @default(autoincrement())
+  nome  String
+  preco Float
+}
+
+model usuario {
+  id      Int    @id @default(autoincrement())
+  nome    String
+  email   String @unique(map: "Usuario_email_key")
+  senha   String
+  pontos  Int    @default(0)
+
+  cidade  String?
+  bairro  String?
+
+  figurinhas usuariofigurinha[]
+
+  trocasEnviadas trocas[] @relation("usuario1")
+  trocasRecebidas trocas[] @relation("usuario2")
+}
+
+model usuariofigurinha {
+  id          Int @id @default(autoincrement())
+
+  usuarioId   Int
+  figurinhaId Int
+
+  repetida    Boolean @default(false)
+  desejada    Boolean @default(false)
+
+  usuario      usuario   @relation(fields: [usuarioId], references: [id])
+  figurinha    figurinha @relation(fields: [figurinhaId], references: [id])
+}
+
+model trocas {
+  id          Int      @id @default(autoincrement())
+
+  usuario1Id  Int
+  usuario2Id  Int
+
+  status      String   @default("PENDENTE")
+
+  createdAt   DateTime @default(now())
+
+  usuario1 usuario @relation("usuario1", fields: [usuario1Id], references: [id])
+
+  usuario2 usuario @relation("usuario2", fields: [usuario2Id], references: [id])
+
+  figurinhas trocaFigurinha[]
+}
+
+model trocaFigurinha {
+  id              Int @id @default(autoincrement())
+
+  trocaId         Int
+  figurinhaId     Int
+
+  usuarioDonoId   Int
+
+  troca       trocas    @relation(fields: [trocaId], references: [id])
+
+  figurinha   figurinha @relation(fields: [figurinhaId], references: [id])
+}
