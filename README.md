@@ -104,7 +104,7 @@ https://livlivm.github.io/Arenasite/
 ---
 ## Autoria
 
-- Read.me realizad por Eduarda Massaro e Lívia Morais
+- Read.me realizado por Eduarda Massaro e Lívia Morais
   
 ---
 
