@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'login.dart';
 import 'jogos.dart';
+import 'figurinhas.dart';
 
 class InicioPage extends StatelessWidget {
   const InicioPage({super.key});
@@ -29,11 +30,7 @@ class InicioPage extends StatelessWidget {
             ),
 
             ListTile(
-              leading: Image.asset(
-                "assets/bandeira_brasil.png",
-                width: 24,
-                height: 24,
-              ),
+              leading: const Icon(Icons.flag_rounded),
               title: const Text("Infos Jogos"),
               onTap: () {
                 Navigator.pop(context);
@@ -41,6 +38,20 @@ class InicioPage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const JogosPage()),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.collections),
+              title: const Text("Adicione Figurinhas"),
+              onTap: () {
+                Navigator.pop(context);
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const FigurinhasPage(),
+                  ),
                 );
               },
             ),
@@ -73,8 +84,17 @@ class InicioPage extends StatelessWidget {
         backgroundColor: Colors.black,
         elevation: 0,
         toolbarHeight: 50,
-        leading: const Icon(Icons.menu, color: Colors.white),
 
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+              icon: const Icon(Icons.menu, color: Colors.white),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          },
+        ),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 12),
@@ -155,9 +175,41 @@ class InicioPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  figurinha("assets/cr7.png"),
-                  figurinha("assets/messi.png"),
-                  figurinha("assets/modric.png"),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const FigurinhasPage(),
+                        ),
+                      );
+                    },
+                    child: figurinha("assets/cr7.png"),
+                  ),
+
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const FigurinhasPage(),
+                        ),
+                      );
+                    },
+                    child: figurinha("assets/messi.png"),
+                  ),
+
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const FigurinhasPage(),
+                        ),
+                      );
+                    },
+                    child: figurinha("assets/modric.png"),
+                  ),
                 ],
               ),
             ),

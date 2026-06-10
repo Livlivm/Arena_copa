@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'inicio.dart';
 import 'jogos.dart';
+import 'figurinhas.dart';
 
 void main() {
   runApp(const ArenaCopaApp());
@@ -70,6 +71,21 @@ class CadastroScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const JogosPage()),
+                );
+              },
+            ),
+
+            ListTile(
+              leading: const Icon(Icons.collections),
+              title: const Text("Adicione Figurinhas"),
+              onTap: () {
+                Navigator.pop(context);
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const FigurinhasPage(),
+                  ),
                 );
               },
             ),

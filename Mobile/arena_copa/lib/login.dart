@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'cadastro.dart';
 import 'inicio.dart';
 import 'jogos.dart';
+import 'figurinhas.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -51,6 +52,21 @@ class LoginScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const JogosPage()),
+                );
+              },
+            ),
+
+            ListTile(
+              leading: const Icon(Icons.collections),
+              title: const Text("Adicione Figurinhas"),
+              onTap: () {
+                Navigator.pop(context);
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const FigurinhasPage(),
+                  ),
                 );
               },
             ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'inicio.dart';
+import 'figurinhas.dart';
 
 class JogosPage extends StatelessWidget {
   const JogosPage({super.key});
@@ -36,6 +37,21 @@ class JogosPage extends StatelessWidget {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => const InicioPage()),
+                );
+              },
+            ),
+
+            ListTile(
+              leading: const Icon(Icons.collections),
+              title: const Text("Adicione Figurinhas"),
+              onTap: () {
+                Navigator.pop(context);
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const FigurinhasPage(),
+                  ),
                 );
               },
             ),
