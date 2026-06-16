@@ -62,7 +62,7 @@ npm install
 
 4. Configure o arquivo `.env`:
 ```env
-DATABASE_URL="mysql://root:senha@localhost:3306/copa"
+DATABASE_URL="mysql://root:@localhost:3306/copa"
 JWT_SECRET="segredo123"
 ```
 
